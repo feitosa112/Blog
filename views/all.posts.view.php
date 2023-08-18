@@ -9,7 +9,7 @@ $id = $post->id;
 <h5 class="display-4 text-center">All posts</h5>
 <div class="container">
     <div class="row">
-        <div class="col-6 offset-3">
+        <div class="col-8 offset-2">
         <?php require_once "card.php" ?>
         </div>
     </div>
