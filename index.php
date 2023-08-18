@@ -29,6 +29,14 @@
     <?php unset($_SESSION['deleted_msg']) ?>
 
 <?php endif ?>
+
+<?php if(isset($_SESSION['update'])): ?>
+    <div class="alert alert-success" role="alert">
+        <?php echo $_SESSION['update'] ?>
+    </div>
+    <?php unset($_SESSION['update']) ?>
+
+<?php endif ?>
 <?php require_once "views/all.posts.view.php"; ?>
 
 

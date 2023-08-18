@@ -26,7 +26,7 @@ $categories=$category->allCategory();
         <form action="add_newPost.php" method="POST">
             <input type="text" name="new_post" placeholder="Add new post" class="form-control"><br>
             <select name="category" id="" class="form-control">
-                <option value="">Chose category</option>
+                <option value="11">Chose category</option>
                 <?php foreach($categories as $cat):?>
                     <option value="<?php echo $cat->id ?>"><?php echo $cat->name ?></option>
                 <?php endforeach ?>

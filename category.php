@@ -1,5 +1,5 @@
 <?php require_once "bootstrap.php" ?>
-<?php require_once "partials/header.php" ?>
+
 <?php 
 $id = $_GET['id'];
 $allPosts = $post->categoryFromId($id);
@@ -7,7 +7,7 @@ foreach ($allPosts as $post);
 
 $id = $post->id;
 $comments = $comment->allComments($id);
-
+// var_dump($allPosts);
 
 ?>
 

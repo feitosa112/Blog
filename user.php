@@ -1,5 +1,5 @@
 <?php require_once "bootstrap.php" ?>
-<?php require_once "partials/header.php" ?>
+
 <?php 
 $id = $_GET['id'];
 $allPosts = $post->postsFromUserId($id);

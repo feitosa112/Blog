@@ -3,11 +3,12 @@
     <div class="card m-4" >
 
         <div class="card-header" style="background-color: #f5dc98;">
-            <a href="user.php?id=<?php echo $post->user_id ?>" class="btn btn-info btn-sm float-left"><?php echo $post->userName ?></a>
+            <a href="user.php?id=<?php echo $post->user_id ?>" class="btn btn-primary btn-sm float-left"><?php echo $post->userName ?></a>
             <a href="category.php?id=<?php echo $post->category_id ?>" class="badge badge-secondary btn-sm float-right"><?php echo $post->name ?></a>
         </div>
 
         <div class="card-body">
+            <!-- <h2><?php echo $post->id ?></h2> -->
             <h5><?php echo $post->post ?></h5>
             <?php
              $tags = $post->tags;
@@ -22,7 +23,7 @@
         <div class="card-footer">
             <?php if(isset($_SESSION['loggedUser']) && $post->user_id == $_SESSION['loggedUser']->id): ?>
                 <a href="delete.php?id=<?php echo $post->id ?>" class="badge badge-danger btn-sm float-left">Delete</a>
-                <a href="" class="badge badge-warning btn-sm float-right">Update</a>
+                <a href="update.view.php?id=<?php echo $post->id ?>" class="badge badge-warning btn-sm float-right">Update</a>
             <?php endif ?><br><br>
                         
             <p>Comments:</p>
@@ -43,7 +44,7 @@
                     <input type="text" name="comment" placeholder="Input comment" class="form-control">
                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['loggedUser']->id ?>">
                     <input type="hidden" name="post_id" value="<?php echo $post->id ?>">
-                    <button type="submit" name="addComment" class="btn btn-primary btn-sm float-right">Add comment</button>
+                    <button type="submit" name="addComment" class="btn btn-success btn-sm float-right">Add comment</button>
                 </form>
             <?php endif ?>
         </div>
