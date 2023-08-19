@@ -17,8 +17,8 @@ class Post extends QueryBuilder {
     }
 
     public function allPosts(){
-
-        $sql = "SELECT posts.id,posts.post,posts.category_id,posts.user_id,posts.tags,posts.created_at,categories.name,users.userName FROM posts INNER JOIN categories ON posts.category_id=categories.id INNER JOIN users ON posts.user_id=users.id ORDER BY created_at DESC LIMIT 5";
+        
+        $sql = "SELECT posts.id,posts.post,posts.category_id,posts.user_id,posts.tags,posts.created_at,categories.name,users.userName FROM posts INNER JOIN categories ON posts.category_id=categories.id INNER JOIN users ON posts.user_id=users.id";
         $query1 = $this->db->prepare($sql);
         $query1->execute();
         $result = $query1->fetchAll(PDO::FETCH_OBJ);
@@ -78,6 +78,16 @@ class Post extends QueryBuilder {
     $query1->execute();
     $this->post_updated=true;
     
+   }
+
+   public function next(){
+   
+    $page = $_SESSION['page'];
+    $sql = "SELECT posts.id,posts.post,posts.category_id,posts.user_id,posts.tags,posts.created_at,categories.name,users.userName FROM posts INNER JOIN categories ON posts.category_id=categories.id INNER JOIN users ON posts.user_id=users.id ORDER BY created_at DESC LIMIT $page, 2";
+    $query1 = $this->db->prepare($sql);
+    $query1->execute();
+    $result = $query1->fetchAll(PDO::FETCH_OBJ);
+    return $result;
    }
 }
 ?>

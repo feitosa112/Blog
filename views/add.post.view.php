@@ -3,13 +3,13 @@ $categories=$category->allCategory();
 ?> 
 <div class="container mt-4">
     <div class="row">
-        <div class="col-6 offset-3">
+        <div class="col-2">
           
             <!-- Button trigger modal -->
        
        
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Add new post
+            <i class="fa fa-plus" aria-hidden="true"></i> Add new post
             </button>
 
 <!-- Modal -->
@@ -17,7 +17,7 @@ $categories=$category->allCategory();
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add new post</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-plus" aria-hidden="true"></i> Add new post</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
