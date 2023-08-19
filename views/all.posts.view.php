@@ -20,12 +20,12 @@ if(count($allPosts)>0){
 <?php if($total_page >1): ?>
     <?php if($current_page>1): ?>
         <div class="text-center">
-        <a href="?page=<?php echo $current_page-1 ?>"class="btn btn-primary text-center mb-4"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Back</a>
+        <a href="?page=<?php echo $current_page-1 ?>"class="btn btn-primary text-center mb-4"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Back(3)</a>
         </div>
     <?php endif ?>
     <?php if($current_page<$total_page): ?>       
         <div class="text-center">
-        <a href="?page=<?php echo $current_page+1 ?>"class="btn btn-primary text-center">Next <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+        <a href="?page=<?php echo $current_page+1 ?>"class="btn btn-primary text-center">Next(3) <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
         </div>
     <?php endif ?>
 <?php endif ?>

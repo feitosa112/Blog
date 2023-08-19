@@ -18,5 +18,5 @@ $category = new Category($db);
 $post = new Post($db);
 $allPosts = new Post($db);
 $comment = new Comment($db);
-$next = new Post($db);
+
 ?>

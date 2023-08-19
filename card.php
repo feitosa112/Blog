@@ -41,7 +41,7 @@
         <div class="card-postfooter">
             <?php if(isset($_SESSION['loggedUser']) && $post->user_id != $_SESSION['loggedUser']->id): ?>
                 <form action="add_comment.php" method="POST">
-                    <input type="text" name="comment" placeholder="Input comment" class="form-control">
+                    <input type="text" name="comment" placeholder="Input comment" class="form-control" required>
                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['loggedUser']->id ?>">
                     <input type="hidden" name="post_id" value="<?php echo $post->id ?>">
                     <button type="submit" name="addComment" class="btn btn-success btn-sm float-right">Add comment</button>
