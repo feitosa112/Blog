@@ -60,7 +60,7 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE IF NOT EXISTS `comments` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `comment` longtext CHARACTER SET utf8NOT NULL,
+  `comment` longtext CHARACTER SET utf8 NOT NULL,
   `post_id` int NOT NULL,
   `user_id` int NOT NULL,
   `created_at` datetime DEFAULT NULL,
