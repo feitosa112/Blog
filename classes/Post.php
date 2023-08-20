@@ -2,6 +2,7 @@
 class Post extends QueryBuilder {
     public $post_inserted = NULL;
     public $post_updated = NULL;
+    public $postInput = NULL;
 
     public function addNewPost(){
         $post = $_POST['new_post'];
@@ -10,10 +11,16 @@ class Post extends QueryBuilder {
         $category = $_POST['category'];
         $user = $_SESSION['loggedUser']->id;
 
+        if($post == null){
+            $this->postInput = true;
+        }else{
+
         $sql = "INSERT INTO posts VALUES(NULL,?,?,?,?,NOW())";
         $query = $this->db->prepare($sql);
         $query->execute([$post,$category,$user,$tags]);
         $this->post_inserted = true;
+    }
+
     }
 
     public function allPosts(){

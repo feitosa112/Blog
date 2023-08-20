@@ -1,4 +1,5 @@
 <?php 
+require_once "bootstrap.php";
 $categories=$category->allCategory();
 ?> 
 <div class="container mt-4">
@@ -41,6 +42,8 @@ $categories=$category->allCategory();
           
           <?php header("Location: index.php") ?>
         <?php endif ?>
+
+        
       </div>
       
     </div>

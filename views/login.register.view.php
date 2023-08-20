@@ -11,11 +11,11 @@
         <div class="col-6">
             <h4>Register</h4>
             <form action="login_register.php" method="POST" >
-                <input type="text" name="register_name" placeholder="Name" class="form-control"  required><br>
-                <input type="text" name="register_surname" placeholder="Surname" class="form-control"  required><br>
-                <input type="text" name="register_username" placeholder="UserName" class="form-control"  required><br>
-                <input type="email" name="register_email" placeholder="Email" class="form-control" required><br>
-                <input type="password" name="register_password" placeholder="Password" class="form-control" required><br>
+                <input style="background-color: <?php if($user->registerError){echo "red";} ?>;" type="text" name="register_name" placeholder="Name" class="form-control"><br>
+                <input style="background-color: <?php if($user->registerError){echo "red";} ?>;" type="text" name="register_surname" placeholder="Surname" class="form-control" ><br>
+                <input style="background-color: <?php if($user->registerError){echo "red";} ?>;" type="text" name="register_username" placeholder="UserName" class="form-control" ><br>
+                <input style="background-color: <?php if($user->registerError){echo "red";} ?>;" type="email" name="register_email" placeholder="Email" class="form-control" ><br>
+                <input style="background-color: <?php if($user->registerError){echo "red";} ?>;" type="password" name="register_password" placeholder="Password" class="form-control" ><br>
                 
                 <button class="btn btn-primary form-control"name="registerBtn">Register</button>
             </form>
@@ -23,6 +23,9 @@
                 <div class="alert alert-success">Uspjesna registracija.Ulogujte se</div>
             <?php elseif($user->userExist): ?>
                 <div class="alert alert-danger">Korisnik vec postoji u bazi</div>
+            <?php endif ?>
+            <?php if($user->registerError): ?>
+                <div class="alert alert-danger">Morate unijeti sva polja</div>
             <?php endif ?>
         </div>
 

@@ -3,7 +3,7 @@ class User extends QueryBuilder {
     public $register_result = NULL;
     public $userExist = NULL;
     public $loggedUser = NULL;
-
+    public $registerError = NULL;
 
 
 
@@ -15,12 +15,17 @@ class User extends QueryBuilder {
         $password = $_POST['register_password'];
         $username=$_POST['register_username'];
         
+        if($name == null || $surname == null || $email==null || $password == null || $username == null ){
+            $this->registerError = true;
+        }else{
+            
+        
 
         $sql1 = "SELECT * FROM users WHERE email=?";
         $query1 = $this->db->prepare($sql1);
         $query1->execute([$email]);
         $result = $query1->fetch(PDO::FETCH_OBJ);
-        
+
         if($result==false){
             $sql = "INSERT INTO users VALUES (NULL,?,?,?,?,?)";
             $query = $this->db->prepare($sql);
@@ -30,6 +35,9 @@ class User extends QueryBuilder {
             $this->userExist = true;   
 
         }
+
+    }
+        
    
     } 
 
