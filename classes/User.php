@@ -4,18 +4,23 @@ class User extends QueryBuilder {
     public $userExist = NULL;
     public $loggedUser = NULL;
     public $registerError = NULL;
-
+    public $name;
+    public $surname;
+    public $email;
+    public $username;
+    
 
 
 
     public function registerUser(){
-        $name = $_POST['register_name'];
-        $surname = $_POST['register_surname'];
-        $email = $_POST['register_email'];
+        $this->name = $_POST['register_name'];
+        $this->surname = $_POST['register_surname'];
+        $this->email = $_POST['register_email'];
         $password = $_POST['register_password'];
-        $username=$_POST['register_username'];
+        $this->username=$_POST['register_username'];
+
         
-        if($name == null || $surname == null || $email==null || $password == null || $username == null ){
+        if($this->name == null || $this->surname == null || $this->email==null || $password == null || $this->username == null ){
             $this->registerError = true;
         }else{
             
@@ -23,13 +28,13 @@ class User extends QueryBuilder {
 
         $sql1 = "SELECT * FROM users WHERE email=?";
         $query1 = $this->db->prepare($sql1);
-        $query1->execute([$email]);
+        $query1->execute([$this->email]);
         $result = $query1->fetch(PDO::FETCH_OBJ);
 
         if($result==false){
             $sql = "INSERT INTO users VALUES (NULL,?,?,?,?,?)";
             $query = $this->db->prepare($sql);
-            $query->execute([$name,$surname,$username,$email,SHA1($password)]);
+            $query->execute([$this->name,$this->surname,$this->username,$this->email,SHA1($password)]);
             $this->register_result = true;
         }else{
             $this->userExist = true;   

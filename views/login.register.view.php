@@ -11,11 +11,11 @@
         <div class="col-6">
             <h4>Register</h4>
             <form action="login_register.php" method="POST" >
-                <input style="background-color: <?php if($user->registerError){echo "red";} ?>;" type="text" name="register_name" placeholder="Name" class="form-control"><br>
-                <input style="background-color: <?php if($user->registerError){echo "red";} ?>;" type="text" name="register_surname" placeholder="Surname" class="form-control" ><br>
-                <input style="background-color: <?php if($user->registerError){echo "red";} ?>;" type="text" name="register_username" placeholder="UserName" class="form-control" ><br>
-                <input style="background-color: <?php if($user->registerError){echo "red";} ?>;" type="email" name="register_email" placeholder="Email" class="form-control" ><br>
-                <input style="background-color: <?php if($user->registerError){echo "red";} ?>;" type="password" name="register_password" placeholder="Password" class="form-control" ><br>
+                <input  type="text" name="register_name" value="<?php echo $user->name ?>" placeholder="Name" class="form-control"><br>
+                <input  type="text" name="register_surname" value="<?php echo $user->surname ?>" placeholder="Surname" class="form-control" ><br>
+                <input  type="text" name="register_username" value="<?php echo $user->username ?>" placeholder="UserName" class="form-control" ><br>
+                <input  type="email" name="register_email" value="<?php echo $user->email ?>" placeholder="Email" class="form-control" ><br>
+                <input  type="password" name="register_password" placeholder="Password" class="form-control" ><br>
                 
                 <button class="btn btn-primary form-control"name="registerBtn">Register</button>
             </form>
