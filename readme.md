@@ -1,4 +1,5 @@
 Za izradu aplikacije koristena * PHP Version 8.0.26 *.
+Za stilizaciju koristen front-end framework Bootstrap,aplikacija je responsivna
 Za pokretanje potrebno kreirati bazu podataka pod nazivom "onlinemagazine" ili promijeniti naziv za "dbname" u fileu "config.php" gdje se nalaze i ostala podesavanja za konekciju sa bazom.
 Potrebno preuzeti file "onlinemagazine.sql" te importovati ga u novonapravljenu bazu (onlinemagazine).
 
