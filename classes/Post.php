@@ -5,6 +5,7 @@ class Post extends QueryBuilder {
     public $postInput = NULL;
 
     public function addNewPost(){
+        // var_dump("123");
         $post = $_POST['new_post'];
         $tags = $_POST['tag'];
 

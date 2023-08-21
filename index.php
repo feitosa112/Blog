@@ -3,6 +3,8 @@
 <?php if(isset($_SESSION['loggedUser'])){
     require_once "views/add.post.view.php";
     
+
+
 } ?>
 
 <?php require_once "messages.php" ?>

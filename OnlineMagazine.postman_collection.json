@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "8a8dde3b-08ba-4d89-a117-a52674abb70d",
+		"name": "OnlineMagazine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12955712"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "allPosts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/php/onlineMagazine/apiPosts.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"php",
+								"onlineMagazine",
+								"apiPosts.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "add_newPost",
+									"value": "novi text posta",
+									"type": "text"
+								},
+								{
+									"key": "addNewPost",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/php/onlineMagazine/add_newPost.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"php",
+								"onlineMagazine",
+								"add_newPost.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allPostsFromCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "potrebno je unijeti id kategorije",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/blog-master/apiCategory.php?id=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"blog-master",
+								"apiCategory.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4",
+									"description": "Potrebno je unijeti id kategorije za izlistavanje svih postova te kategorije"
+								}
+							]
+						},
+						"description": "Klikom na naziv kategorije dolazimo na sve postove iz te kategorije"
+					},
+					"response": []
+				},
+				{
+					"name": "allPostsFromUserWithiD",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "potrebno je unijeti id usera",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/php/onlineMagazine/apiPostsFromUser.php?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"php",
+								"onlineMagazine",
+								"apiPostsFromUser.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Kada se ulogujemo na pocetnoj stranici se pojavljuje dugme Add new post.Klikom na njega nam se otvara forma za dodavanje novog posta.\n\nPotrebno je unijeti post,moze se odabrati kategorija,ukoliko se ne izabere ni jedna automatski se dodaje u kategoriju \"other\".Mogu se opcionalno unijeti tagovi.Klikom na Add post idemo na ovu adresu i vrsi se unos u bazu a vracamo se na pocetnu stranu gdje se ispisuje poruka o uspjesno dodatom postu,koja se cuva u sesiji koja se prekida sa prvim reloadom stranice."
+					},
+					"response": []
+				},
+				{
+					"name": "allPostsWithTag",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "tags",
+									"value": "zdravlje",
+									"description": "potrebno je upisati naziv taga koji je sadrzan u nekom postu",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/php/onlineMagazine/apiTags.php?tags=zdravlje",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"php",
+								"onlineMagazine",
+								"apiTags.php"
+							],
+							"query": [
+								{
+									"key": "tags",
+									"value": "zdravlje"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePost",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/php/onlineMagazine/apiDelete.php?id=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"php",
+								"onlineMagazine",
+								"apiDelete.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4",
+									"description": "Samo ulogovoani korisnici mogu da brisu svoje postove"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePostView",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "post",
+									"value": "izmjena posta u postmanu",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "updateBtn",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/php/onlineMagazine/apiUpdateView.php?id=15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"php",
+								"onlineMagazine",
+								"apiUpdateView.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "register_name",
+									"value": "Raul",
+									"description": "sva polja su obavezna",
+									"type": "text"
+								},
+								{
+									"key": "register_surname",
+									"value": "Gonzales",
+									"type": "text"
+								},
+								{
+									"key": "register_username",
+									"value": "Raul112",
+									"type": "text"
+								},
+								{
+									"key": "register_email",
+									"value": "raul1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "register_password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "registerBtn",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/php/onlineMagazine/login_register.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"php",
+								"onlineMagazine",
+								"login_register.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
